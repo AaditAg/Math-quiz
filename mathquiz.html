@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<title> Math Quiz </title>
+
+	<!--Connecting CSS document-->
+
+	<link rel="stylesheet" href="mathquiz.css">
+	<meta charset="utf-8">
+
+</head>
+
+<body>
+	<p id="scoreDisplay"> <strong> The quiz below will ask 4 math questions. Let see if you can get all of them right!
+		</strong> </p>
+	<hr>
+	<button onclick="mathQuiz(score,indexno,questions,answers)" id="buttonReset"> Click me to start the quiz! </button>
+	<hr>
+	<footer><strong>
+			<p id="footerCredits"> </p>
+		</strong></footer>
+	<script>
+
+		//pre-defining the variables
+
+		var score;
+		var indexno;
+		var questions;
+		var answers;
+
+		//making function mathQuiz() for button
+
+		function mathQuiz(score, indexno, questions, answers) {
+
+			alert("Welcome to the mathematics quiz!");
+
+			//declaring variable values (does include list variables)
+
+			score = 0;
+			indexno = 0;
+			questions = ["What is 111 + 233?", "What is 4 x 56?", "What is y - z if y = 4 and z = 3?", "What is the value of x if 2x = 15?"];
+			answers = [344, 224, 1, 7.5];
+
+			//creating conditions
+
+			while (indexno < 4) {
+
+				alert(indexno + 1 + ". " + questions[indexno]);
+
+				var user_answer = +prompt("Enter answer below:");
+				var confirm1 = confirm("Are you sure that the answer is " + user_answer + "?");
+
+				if (confirm1 == true) {
+
+					if (user_answer == answers[indexno]) {
+						score += 1;
+						alert("Well done! Correct answer!");
+
+					} else {
+						alert("Oops! Incorrect answer! The correct answer was " + answers[indexno] + ".");
+
+					}
+				}
+
+				else if (confirm1 == false) {
+
+					alert(indexno + 1 + ". " + questions[indexno]);
+					user_answer = +prompt("Please enter the answer again:", user_answer);
+
+					if (user_answer == answers[indexno]) {
+						score += 1;
+						alert("Well done! Correct answer!");
+
+					} else {
+						alert("Oops! Incorrect answer! The correct answer was " + answers[indexno] + ".");
+
+					}
+				}
+
+				//increasing list index
+
+				indexno += 1;
+
+			}
+
+			//user encouragement
+
+			if (score == 0 || score == 1 || score == 2) {
+				alert("Your score was " + score + "/4. Don't worry! You can do better next time!");
+
+			} else {
+				alert("Your score was " + score + "/4. Excellent work!");
+
+			}
+
+			//display elements
+
+			document.getElementById("scoreDisplay").innerHTML = "Your score: " + "<strong>" + score + "/4." + "</strong>";
+			document.getElementById("buttonReset").innerHTML = "Try the quiz again!";
+			document.getElementById("footerCredits").innerHTML = "Made by: Aadit Agarwal " + "<br>" + "Contact: aadit.a_mhs@gemselearning.com" + "<br>" + "<br>" + "Kindly share the quiz on social media platforms! Thank you!";
+
+		}
+
+	</script>
+
+</body>
+
+</html>

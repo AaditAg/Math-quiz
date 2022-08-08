@@ -1,0 +1,26 @@
+body {
+  background-color:#00ff00;
+
+}
+
+p {
+  font-family:century gothic;
+  font-size:110%;
+}
+
+button {
+  background-color:#3399ff;
+  border-color:#ff3300;
+  border-radius:5px;
+  width:150px;
+  height:45px;
+  color:#060f5e
+
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border-color:#149e02;
+  width:135px;
+  height:40px;
+}
